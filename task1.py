@@ -1,7 +1,5 @@
 """ Module test program for lr1. """
 
-
-
 NAME = 'Ротчев Н.К.'
 GROUP = '4586'
 STRING = "Тестовая программа " + NAME + " группа " + GROUP
@@ -23,3 +21,4 @@ print(A)            # проверить значение переменной A
 ARGUMENT_1 = 45
 ARGUMENT_2 = 45
 print(f"Ответ:{ARGUMENT_1 + ARGUMENT_2}")
+
