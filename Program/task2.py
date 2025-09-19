@@ -13,7 +13,7 @@ course_number = now - year_of_admission + 1
 
 surname = "Ротчев"
 name = "Никита"
-patronymic = "К"
+patronymic = "Константинович"
 
 print("╔" + "═" * 39 + "╗")
 print("║" + " СТУДЕНЧЕСКИЙ БИЛЕТ ".center(39, ' ') + "║")
