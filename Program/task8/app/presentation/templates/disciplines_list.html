@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Список дисциплин{% endblock %}
+
+{% block content %}
+<h2>Дисциплины <a href="/disciplines/add" style="font-size:1.2rem;">[+ Добавить]</a></h2>
+
+{% if disciplines %}
+<ul>
+    {% for d in disciplines %}
+    <li>
+        <strong><a href="/disciplines/{{ d.code }}">{{ d.code }}</a></strong> — {{ d.title }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Пока нет ни одной дисциплины.</p>
+{% endif %}
+{% endblock %}

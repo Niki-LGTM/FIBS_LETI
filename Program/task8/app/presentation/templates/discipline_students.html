@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Студенты — {{ discipline.title }}{% endblock %}
+
+{% block content %}
+<h2>Студенты, изучающие «{{ discipline.code }} — {{ discipline.title }}»</h2>
+
+{% if students %}
+<ul>
+    {% for s in students %}
+    <li>
+        <strong>{{ s.id }}</strong> — {{ s.name }} (группа {{ s.group }})
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>На эту дисциплину пока никто не записан.</p>
+{% endif %}
+
+<p>
+    <a href="/disciplines/{{ discipline.code }}/add">+ Добавить студента</a> • 
+    <a href="/disciplines/{{ discipline.code }}">← К дисциплине</a>
+</p>
+{% endblock %}

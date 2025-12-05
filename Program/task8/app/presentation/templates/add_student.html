@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Запись студента на {{ discipline.title }}{% endblock %}
+
+{% block content %}
+<h2>Записать студента на дисциплину</h2>
+<h3>{{ discipline.code }} — {{ discipline.title }}</h3>
+
+<form method="post">
+    <p>
+        <label>Выберите студента:<br>
+            <select name="student_id" required style="width:320px; padding:0.5rem;">
+                {% if students %}
+                    {% for s in students %}
+                    <option value="{{ s.id }}">
+                        {{ s.id }} — {{ s.name }} ({{ s.group }})
+                    </option>
+                    {% endfor %}
+                {% else %}
+                    <option disabled>Нет доступных студентов</option>
+                {% endif %}
+            </select>
+        </label>
+    </p>
+    <p>
+        <button type="submit" {% if not students %}disabled{% endif %}>
+            Записать на дисциплину
+        </button>
+        <a href="/disciplines/{{ discipline.code }}">Отмена</a>
+    </p>
+</form>
+{% endblock %}

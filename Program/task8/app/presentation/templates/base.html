@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ИДЗ-8 | Дисциплины{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background: #f9f9f9; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        button, input[type=submit] { padding: 0.5rem 1rem; margin: 0.3rem; }
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 2px solid #ddd; font-size: 0.9rem; }
+        nav { margin-bottom: 1rem; }
+        h1, h2 { color: #333; }
+        ul { padding-left: 1.2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Система учёта дисциплин</h1>
+        <nav>
+            <a href="/disciplines">Все дисциплины</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <strong>Сохранить данные:</strong><br>
+        <form action="/save/groups" method="post" style="display:inline">
+            <button type="submit">Группы</button>
+        </form>
+        <form action="/save/students" method="post" style="display:inline">
+            <button type="submit">Студенты</button>
+        </form>
+        <form action="/save/disciplines" method="post" style="display:inline">
+            <button type="submit">Дисциплины</button>
+        </form>
+        <form action="/save/enrollments" method="post" style="display:inline">
+            <button type="submit">Записи на дисциплины</button>
+        </form>
+    </footer>
+</body>
+</html>
